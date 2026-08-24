@@ -1,7 +1,6 @@
 import { Map } from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
-import TransportHub from "./data/Transport Hub.geojson?url";
-import Delineasi from "./data/Kota Yogyakarta.geojson?url";
+import {addTransportHubLayer, addDelineasiLayer} from "./layers/vector.js";
 
 
 const mapElement = document.createElement('div');
@@ -17,35 +16,8 @@ const map = new Map({
 })
 
 map.on("load", () => {
+  addTransportHubLayer(map);
+  addDelineasiLayer(map);
 
-  map.addSource("TransportHub", {
-    type: "geojson",
-    data: TransportHub
-  });
-
-  map.addLayer({
-    id: "TransportHub-layer",
-    type: "circle",
-    source: "TransportHub",
-    paint: {
-      "circle-radius": 5,
-      "circle-color": "#FF0000"
-    }
-  });
-
-  map.addSource("Delineasi", {
-    type: "geojson",
-    data: Delineasi
-  });
-
-  map.addLayer({
-    id: "Delineasi-layer",
-    type: "fill",
-    source: "Delineasi",
-    paint: {
-      "fill-color": "#0000FF",
-      "fill-opacity": 0.1,
-      "fill-outline-color": "#000000"
-    }
-  });
+  
 })
