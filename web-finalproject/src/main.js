@@ -1,11 +1,12 @@
 import { Map } from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import TransportHub from "./data/Transport Hub.geojson?url";
+import Delineasi from "./data/Kota Yogyakarta.geojson?url";
 
 
 const mapElement = document.createElement('div');
 mapElement.id = 'map';
-mapElement.style.height = '300px';
+mapElement.style.height = '400px';
 document.body.appendChild(mapElement);
 
 const map = new Map({
@@ -32,4 +33,19 @@ map.on("load", () => {
     }
   });
 
+  map.addSource("Delineasi", {
+    type: "geojson",
+    data: Delineasi
+  });
+
+  map.addLayer({
+    id: "Delineasi-layer",
+    type: "fill",
+    source: "Delineasi",
+    paint: {
+      "fill-color": "#0000FF",
+      "fill-opacity": 0.1,
+      "fill-outline-color": "#000000"
+    }
+  });
 })
