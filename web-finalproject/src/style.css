@@ -5,13 +5,6 @@ body {
     height: 100%;
 }
 
-#map {
-    width: 100%;
-    height: 100vh;
-}
-
-
-
 /* =========================
    TOD POPUP
 ========================= */
@@ -526,7 +519,7 @@ section {
     padding: 0 30px;
 }
 
-#map {
+#map-canvas {
     width: 100%;
     height: 100%;
 

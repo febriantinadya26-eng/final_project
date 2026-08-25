@@ -1,16 +1,15 @@
-import { Map, AttributionControl, FullscreenControl  } from 'maplibre-gl';
+import { Map, AttributionControl, FullscreenControl, setWorkerUrl } from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
+import workerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url';
 import {addTransportHubLayer, addDelineasiLayer, addCommercialLayer, addEducationLayer, addHealthcareLayer} from "./layers/vector.js";
 import { addTransportHubPopup } from "./popup/popup.js";
 import { storeBufferGeometry } from "./engine/bufferTool.js";
 import { addLegend } from "./component/legend.js";
 
-const mapElement = document.createElement('div');
-mapElement.id = 'map';
-document.body.appendChild(mapElement);
+setWorkerUrl(workerUrl);
 
 const map = new Map({
-  container: 'map',
+  container: 'map-canvas',
   style: 'https://demotiles.maplibre.org/globe.json', // style URL
   center: [110.37, -7.79], // starting position [lng, lat]
   zoom: 12 // starting zoom
