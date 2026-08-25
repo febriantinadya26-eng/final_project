@@ -38,5 +38,5 @@ export function addLegend(map) {
         </div>
     `;
 
-    document.getElementById("map-container").appendChild(legend);
+    document.querySelector(".map-frame").appendChild(legend);
 }
