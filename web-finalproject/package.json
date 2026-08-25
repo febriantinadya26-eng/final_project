@@ -12,6 +12,7 @@
     "vite": "^8.2.2"
   },
   "dependencies": {
+    "@terraformer/wkt": "^2.2.2",
     "maplibre-gl": "^6.5.0"
   }
 }

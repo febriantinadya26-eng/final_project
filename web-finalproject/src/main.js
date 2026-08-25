@@ -1,27 +1,38 @@
-import { Map, AttributionControl  } from 'maplibre-gl';
+import { Map, AttributionControl, FullscreenControl  } from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
-import {addTransportHubLayer, addDelineasiLayer} from "./layers/vector.js";
-
+import {addTransportHubLayer, addDelineasiLayer, addCommercialLayer, addEducationLayer, addHealthcareLayer} from "./layers/vector.js";
+import { addTransportHubPopup } from "./popup/popup.js";
+import { storeBufferGeometry } from "./engine/bufferTool.js";
+import { addLegend } from "./component/legend.js";
 
 const mapElement = document.createElement('div');
 mapElement.id = 'map';
-mapElement.style.height = '400px';
 document.body.appendChild(mapElement);
 
 const map = new Map({
   container: 'map',
   style: 'https://demotiles.maplibre.org/globe.json', // style URL
   center: [110.37, -7.79], // starting position [lng, lat]
-  zoom: 5 // starting zoom
+  zoom: 12 // starting zoom
 });
+
+map.on('click', 'TransportHub-layer', (event) => {
+  addTransportHubPopup(map, event);
+  storeBufferGeometry(map, event);
+});
+
 
 map.addControl(new AttributionControl({
   customAttribution: 'Map data © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }), 'bottom-right');
+map.addControl(new FullscreenControl({container: document.querySelector('body')}));
+
 
 map.on("load", () => {
   addTransportHubLayer(map);
   addDelineasiLayer(map);
-
-  
+  addCommercialLayer(map);
+  addEducationLayer(map);
+  addHealthcareLayer(map);
+  addLegend(map);
 })
