@@ -1,11 +1,565 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TOD Potential in Yogyakarta</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TOD Potential in Yogyakarta</title>
+
+    <meta
+        name="description"
+        content="Interactive WebGIS for analysing transit accessibility and TOD potential in Yogyakarta."
+    />
+
+    <link rel="stylesheet" href="./src/style.css">
 </head>
+
 <body>
-  <link rel="stylesheet" href="./src/style.css">
-  <script type="module" src="./src/main.js"></script>
+
+    <!-- ================= NAVBAR ================= -->
+    <header class="navbar">
+
+        <div class="nav-container">
+
+            <a href="#home" class="logo">
+                <span class="logo-icon">◉</span>
+                TOD<span>YOGYA</span>
+            </a>
+
+            <nav class="nav-menu">
+                <a href="#home">Home</a>
+                <a href="#map">Interactive Map</a>
+                <a href="#methodology">Methodology</a>
+                <a href="#about">About Me</a>
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+    <main>
+
+        <section id="home" class="hero">
+
+            <div class="hero-content">
+
+                <p class="eyebrow">
+                    WEBGIS FINAL PROJECT
+                </p>
+
+                <h1>
+                    Transit Accessibility
+                    <span>& TOD Potential</span>
+                    in Yogyakarta
+                </h1>
+
+                <p class="hero-description">
+                    Exploring the accessibility of public transport hubs
+                    and identifying potential Transit-Oriented Development
+                    areas based on surrounding facilities.
+                </p>
+
+                <a href="#map" class="primary-button">
+                    Explore the Map
+                    <span>↓</span>
+                </a>
+
+            </div>
+
+
+            <div class="hero-info">
+
+                <div class="info-card">
+                    <strong>400 m</strong>
+                    <span>Primary Catchment</span>
+                </div>
+
+                <div class="info-card">
+                    <strong>800 m</strong>
+                    <span>Extended Catchment</span>
+                </div>
+
+                <div class="info-card">
+                    <strong>3</strong>
+                    <span>Facility Categories</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= MAP ================= -->
+        <section id="map" class="map-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <p class="eyebrow">EXPLORE</p>
+
+                    <h2>
+                        Interactive Map
+                    </h2>
+                </div>
+
+                <p>
+                    Explore transport hubs and their surrounding
+                    facilities to understand the TOD potential
+                    across Yogyakarta.
+                </p>
+
+            </div>
+
+
+            <!-- MAP DARI main.js AKAN MASUK DI SINI -->
+            <div id="map-container">
+
+                <div id="map"></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= PROJECT OVERVIEW ================= -->
+        <section class="overview">
+
+            <div class="section-heading centered">
+
+                <p class="eyebrow">
+                    ABOUT THE PROJECT
+                </p>
+
+                <h2>
+                    Understanding TOD Potential
+                </h2>
+
+                <p>
+                    This WebGIS visualizes accessibility around public
+                    transport hubs in Yogyakarta using surrounding
+                    facilities and buffer-based analysis.
+                </p>
+
+            </div>
+
+
+            <div class="overview-grid">
+
+                <div class="overview-card">
+
+                    <div class="card-number">
+                        01
+                    </div>
+
+                    <h3>
+                        Transport Hubs
+                    </h3>
+
+                    <p>
+                        Railway stations, bus stops, and terminals
+                        are identified as the main transport nodes.
+                    </p>
+
+                </div>
+
+
+                <div class="overview-card">
+
+                    <div class="card-number">
+                        02
+                    </div>
+
+                    <h3>
+                        Facility Accessibility
+                    </h3>
+
+                    <p>
+                        Education, healthcare, and commercial facilities
+                        are analysed within 400 m and 800 m catchment areas.
+                    </p>
+
+                </div>
+
+
+                <div class="overview-card">
+
+                    <div class="card-number">
+                        03
+                    </div>
+
+                    <h3>
+                        TOD Potential
+                    </h3>
+
+                    <p>
+                        Accessibility and facility diversity are combined
+                        into a TOD score ranging from 0 to 9.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= METHODOLOGY ================= -->
+        <section id="methodology" class="methodology">
+
+            <div class="section-heading centered">
+
+                <p class="eyebrow">
+                    METHODOLOGY
+                </p>
+
+                <h2>
+                    From Transport Hub to TOD Score
+                </h2>
+
+                <p>
+                    The analysis combines accessibility and facility
+                    diversity to identify areas with different levels
+                    of TOD potential.
+                </p>
+
+            </div>
+
+
+            <div class="method-flow">
+
+                <div class="method-step">
+
+                    <div class="step-icon">
+                        01
+                    </div>
+
+                    <h3>
+                        Transport Hub
+                    </h3>
+
+                    <p>
+                        Identify railway stations,
+                        bus stops, and terminals.
+                    </p>
+
+                </div>
+
+
+                <div class="flow-arrow">→</div>
+
+
+                <div class="method-step">
+
+                    <div class="step-icon">
+                        02
+                    </div>
+
+                    <h3>
+                        Buffer Analysis
+                    </h3>
+
+                    <p>
+                        Create 400 m and 800 m
+                        catchment areas.
+                    </p>
+
+                </div>
+
+
+                <div class="flow-arrow">→</div>
+
+
+                <div class="method-step">
+
+                    <div class="step-icon">
+                        03
+                    </div>
+
+                    <h3>
+                        Facility Analysis
+                    </h3>
+
+                    <p>
+                        Count education,
+                        healthcare and commercial facilities.
+                    </p>
+
+                </div>
+
+
+                <div class="flow-arrow">→</div>
+
+
+                <div class="method-step">
+
+                    <div class="step-icon">
+                        04
+                    </div>
+
+                    <h3>
+                        TOD Classification
+                    </h3>
+
+                    <p>
+                        Calculate the TOD score
+                        and classify its potential.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- SCORE EXPLANATION -->
+
+            <div class="score-container">
+
+                <div class="score-box">
+
+                    <span>ACCESSIBILITY</span>
+
+                    <strong>0 — 6</strong>
+
+                    <p>
+                        Facilities within 400 m receive
+                        a higher weight than those within
+                        400–800 m.
+                    </p>
+
+                </div>
+
+
+                <div class="score-plus">
+                    +
+                </div>
+
+
+                <div class="score-box">
+
+                    <span>FACILITY DIVERSITY</span>
+
+                    <strong>0 — 3</strong>
+
+                    <p>
+                        Based on the number of facility
+                        categories available within 800 m.
+                    </p>
+
+                </div>
+
+
+                <div class="score-equals">
+                    =
+                </div>
+
+
+                <div class="score-box highlight">
+
+                    <span>TOD SCORE</span>
+
+                    <strong>0 — 9</strong>
+
+                    <p>
+                        Combined score used to classify
+                        TOD potential.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- CLASSIFICATION -->
+
+            <div class="classification">
+
+                <div class="classification-item low">
+                    <span class="class-dot"></span>
+
+                    <div>
+                        <strong>Low</strong>
+                        <span>0 – 3</span>
+                    </div>
+                </div>
+
+
+                <div class="classification-item medium">
+                    <span class="class-dot"></span>
+
+                    <div>
+                        <strong>Medium</strong>
+                        <span>4 – 6</span>
+                    </div>
+                </div>
+
+
+                <div class="classification-item high">
+                    <span class="class-dot"></span>
+
+                    <div>
+                        <strong>High</strong>
+                        <span>7 – 9</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= ABOUT ME ================= -->
+        <section id="about" class="about">
+
+            <div class="about-container">
+
+                <div class="about-photo">
+
+                    <!-- GANTI DENGAN FOTO KAMU -->
+                    <img
+                        src="/assets/foto-nadya.jpeg"
+                        alt="Nadya Fadhilah Febrianti"
+                    >
+
+                </div>
+
+
+                <div class="about-content">
+
+                    <p class="eyebrow">
+                        ABOUT THE AUTHOR
+                    </p>
+
+                    <h2>
+                        Hi, I'm Nadya.
+                    </h2>
+
+                    <p class="about-role">
+                        Urban & Regional Planning Student
+                        at Universitas Gadjah Mada
+                    </p>
+
+                    <p>
+                        Saya adalah mahasiswa S1 Perencanaan Wilayah
+                        dan Kota Universitas Gadjah Mada yang memiliki
+                        ketertarikan pada perencanaan transportasi publik
+                        dan pengembangan kawasan berbasis Transit-Oriented
+                        Development (TOD).
+                    </p>
+
+                    <p>
+                        Ketertarikan tersebut mendorong saya untuk
+                        mengembangkan final project ini sebagai bentuk
+                        eksplorasi bagaimana teknologi WebGIS dapat
+                        digunakan untuk memahami aksesibilitas transportasi
+                        dan potensi TOD di kawasan perkotaan.
+                    </p>
+
+
+                    <!-- TIMELINE -->
+
+                    <div class="education">
+
+                        <h3>
+                            Education
+                        </h3>
+
+                        <div class="timeline">
+
+                            <div class="timeline-item">
+
+                                <span class="timeline-year">
+                                    2023 — Present
+                                </span>
+
+                                <div>
+                                    <strong>
+                                        Universitas Gadjah Mada
+                                    </strong>
+
+                                    <p>
+                                        S1 Perencanaan Wilayah dan Kota
+                                    </p>
+                                </div>
+
+                            </div>
+
+
+                            <div class="timeline-item">
+
+                                <span class="timeline-year">
+                                    2020 — 2023
+                                </span>
+
+                                <div>
+                                    <strong>
+                                        MAN Insan Cendekia Ogan Komering Ilir
+                                    </strong>
+
+                                    <p>
+                                        Program IPA
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- CONTACT -->
+
+                    <div class="social-links">
+
+                        <a href="https://instagram.com/ddilae.2/" target="_blank">
+                            Instagram
+                        </a>
+
+                        <a href="mailto:febriantinadya26@gmail.com">
+                            Email
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div>
+
+            <strong>
+                TOD YOGYAKARTA
+            </strong>
+
+            <p>
+                Transit Accessibility & TOD Potential WebGIS
+            </p>
+
+        </div>
+
+        <p>
+            © 2026 Nadya Fadhilah Febrianti
+        </p>
+
+    </footer>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script type="module" src="./src/main.js"></script>
+
 </body>
 </html>
