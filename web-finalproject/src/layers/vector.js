@@ -1,8 +1,8 @@
 import TransportHub from "../data/Transport Hub.geojson?url";
 import Delineasi from "../data/Kota Yogyakarta.geojson?url";
-import Commercial from "../data/Commercial.geojson?url";
-import Education from "../data/Education.geojson?url";
-import Healthcare from "../data/Healthcare.geojson?url";
+import Commercial from "../data/commercial.geojson?url";
+import Education from "../data/education.geojson?url";
+import Healthcare from "../data/healthcare.geojson?url";
 
 export function addTransportHubLayer(map) {
 
