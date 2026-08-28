@@ -10,7 +10,7 @@ setWorkerUrl(workerUrl);
 
 const map = new Map({
   container: 'map-canvas',
-  style: 'https://demotiles.maplibre.org/globe.json', // style URL
+  style: 'https://basemap.mapid.io/styles/basic/style.json?key=6a91a0a953df37905b3a5d55', // style URL
   center: [110.37, -7.79], // starting position [lng, lat]
   zoom: 12 // starting zoom
 });
