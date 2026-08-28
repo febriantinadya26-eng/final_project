@@ -10,7 +10,12 @@ from toolbox.spatial_computation.length import calculate_length
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app)
+CORS(
+    app,
+    resources={r"/*": {"origins": "*"}},
+    methods=["GET", "POST", "OPTIONS"],
+    allow_headers=["Content-Type"]
+)
 
 @app.route("/spatial_computation/area", methods=['POST'])
 def area():
